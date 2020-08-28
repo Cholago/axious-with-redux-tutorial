@@ -1,0 +1,1 @@
+export const GET_USERS_URL = "http://localhost/mdko/index.php/test/";
