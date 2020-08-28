@@ -1,5 +1,5 @@
 import React from 'react';
-import * as Api from './api'
+import PostList from './containers/PostList';
 
 function App() {
   return (
@@ -7,7 +7,7 @@ function App() {
       <div className="row">
         <div className="col-md-6 ml-auto mr-auto">
           <h1 className="text-center">Hello react axios app</h1>
-          <button className="btn btn-primary btn-sm text-center" onClick={Api.getUsers}>Get data</button>
+          <PostList />
         </div>
       </div>
     </div>

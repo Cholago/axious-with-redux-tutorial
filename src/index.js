@@ -3,11 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import { Provider } from 'react-redux';
+import Reducer from './reducers';
+import { fetchAllPosts } from './actions';
+
+const store = createStore(Reducer, applyMiddleware(thunk));
+
+store.dispatch(fetchAllPosts());
+
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
