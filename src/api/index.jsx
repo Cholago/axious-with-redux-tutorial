@@ -2,7 +2,7 @@ import axios from "axios"
 import * as ApiUrl from './EndPoints'
 
 export const getUsers = () => {
-    axios.post(`https://192.168.43.62/mdko/index.php/test`).then()
-    console.log('Get users buton clicked');
-
+    axios.post(ApiUrl.GET_USERS_URL).then(res => {
+        console.log('Actual data data', res.data)
+    }).catch(error => console.log(error));
 }
